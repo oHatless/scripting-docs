@@ -9,7 +9,7 @@ local KeyPressEvent = {}
 function KeyPressEvent:getKeyCode() end
 
 ---Returns the lowercase key name (e.g, "a").  
----@return String  
+---@return string  
 ---@nodiscard  
 function KeyPressEvent:getKeyName() end
 

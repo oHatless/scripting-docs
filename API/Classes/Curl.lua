@@ -39,7 +39,7 @@ CurlOption = {
 function Curl.new() end
 
 ---Adds a header to the request.  
----@param header aString  
+---@param header string  
 ---@return Curl  
 function Curl:addHeader(header) end
 
@@ -49,7 +49,7 @@ function Curl:clearHeaders() end
 
 ---Set a curl option.  
 ---@param option CurlOption  
----@param value String|string|integer  
+---@param value string|integer  
 ---@return Curl  
 function Curl:setopt(option, value) end
 
@@ -71,7 +71,7 @@ function Curl:reset() end
 function Curl:getFinished() end
 
 ---Get the response after perform. Only available if no custom write function was used.  
----@return CurlCode code, String response  
+---@return CurlCode code, string response  
 ---@nodiscard  
 function Curl:getResponse() end
 
@@ -81,7 +81,7 @@ function Curl:getResponse() end
 function Curl:getStatusCode() end
 
 ---Get the Content-Type of the response, if available.  
----@return String?  
+---@return string?  
 ---@nodiscard  
 function Curl:getContentType() end
 
@@ -91,33 +91,33 @@ function Curl:getContentType() end
 function Curl:getContentLength() end
 
 ---Get a human-readable error message after a failed perform.  
----@return String?  
+---@return string?  
 ---@nodiscard  
 function Curl:getError() end
 
 ---Download the response directly into a file.  
----@param filePath aString  
+---@param filePath string  
 ---@return Curl  
 function Curl:downloadToFile(filePath) end
 
 ---Upload the contents of a file.  
----@param filePath aString  
+---@param filePath string  
 ---@return Curl  
 function Curl:uploadFromFile(filePath) end
 
 ---Quick GET request shortcut.  
----@param url aString  
+---@param url string  
 ---@return Curl  
 function Curl:get(url) end
 
 ---Quick POST request shortcut.  
----@param url aString  
----@param data table|String|string  
+---@param url string  
+---@param data table|string  
 ---@return Curl  
 function Curl:post(url, data) end
 
 ---Set a Lua function to receive downloaded data chunks.  
----@param callback fun(data: aString)  
+---@param callback fun(data: string)  
 ---@return Curl  
 function Curl:setWriteCallback(callback) end
 
@@ -132,11 +132,11 @@ function Curl:setProgressCallback(callback) end
 function Curl:setTimeout(seconds) end
 
 ---Escape (percent-encode) a URL string.  
----@param url aString  
----@return String  
+---@param url string  
+---@return string  
 function Curl.escape(url) end
 
 ---Unescape (decode) a percent-encoded URL string.  
----@param url aString  
----@return String  
+---@param url string  
+---@return string  
 function Curl.unescape(url) end

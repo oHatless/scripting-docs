@@ -24,12 +24,12 @@ function Player.getRotation() end
 function Player.getBodyRotation() end
 
 ---Returns the player's Xbox name.  
----@return String?  
+---@return string?  
 ---@nodiscard  
 function Player.getName() end
 
 ---Returns the player's nametag.  
----@return String?  
+---@return string?  
 ---@nodiscard  
 function Player.getNameTag() end
 
@@ -168,13 +168,13 @@ function Player.moveBackward() end
 function Player.setVelocity(velocity) end
 
 ---Makes the player say something in chat.  
----@param message aString  
+---@param message string  
 function Player.sendChatMessage(message) end
 
 ---Makes the player execute a Minecraft command (exclude '/').  
----@param command aString  
+---@param command string  
 function Player.executeGameCommand(command) end
 
 ---Makes the player execute a Nuvola command (exclude prefix).  
----@param command aString  
+---@param command string  
 function Player.executeClientCommand(command) end

@@ -4,6 +4,6 @@
 local ActorTickEvent = {}
 
 ---Gets the actor in the event.  
----@return Actor?  
+---@return LocalActor?  
 ---@nodiscard  
 function ActorTickEvent:getActor() end

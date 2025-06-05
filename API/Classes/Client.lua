@@ -4,6 +4,6 @@
 Client = {}
 
 ---Returns Nuvolas version as a String.  
----@return String  
+---@return string  
 ---@nodiscard  
 function Client.getVersion() end

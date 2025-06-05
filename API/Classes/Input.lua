@@ -4,19 +4,19 @@
 Input = {}
 
 ---Returns whether the specified key is currently pressed.  
----@param key aString  
+---@param key string  
 ---@return boolean  
 ---@nodiscard  
 function Input.isKeyPressed(key) end
 
 ---Returns whether the specified key was just pressed this frame.  
----@param key aString  
+---@param key string  
 ---@return boolean  
 ---@nodiscard  
 function Input.isKeyDown(key) end
 
 ---Returns whether the specified key was just released this frame.  
----@param key aString  
+---@param key string  
 ---@return boolean  
 ---@nodiscard  
 function Input.isKeyUp(key) end
@@ -50,12 +50,12 @@ function Input.blockInput(block) end
 function Input.isInputBlocked() end
 
 ---Blocks a specific key from reaching the game.  
----@param key aString  
+---@param key string  
 ---@param block boolean  
 function Input.blockKey(key, block) end
 
 ---Returns whether a specific key is blocked.  
----@param key aString  
+---@param key string  
 ---@return boolean  
 ---@nodiscard  
 function Input.isKeyBlocked(key) end
@@ -72,7 +72,7 @@ function Input.blockMouse(button, block) end
 function Input.isMouseBlocked(button) end
 
 ---Returns a human-readable name for a key code.  
----@param key String|string|integer  
+---@param key string|integer  
 ---@return string  
 ---@nodiscard  
 function Input.getKeyName(key) end
@@ -89,12 +89,12 @@ function Input.getMouseName(button) end
 function Input.anyKeyPressed() end
 
 ---Returns a list of all currently pressed keys.  
----@return String[]  
+---@return string[]  
 ---@nodiscard  
 function Input.getPressedKeys() end
 
 ---Simulates a key press.  
----@param key String|string|integer  
+---@param key string|integer  
 function Input.pressKey(key) end
 
 ---Simulates a mouse button press.  

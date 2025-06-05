@@ -3,11 +3,11 @@
 ---@class ChatSendEvent
 local ChatSendEvent = {}
 
----@return String  
+---@return string  
 ---@nodiscard  
 function ChatSendEvent:getMessage() end
 
----@return String  
+---@return string  
 ---@nodiscard  
 function ChatSendEvent:getAuthor() end
 
@@ -15,7 +15,7 @@ function ChatSendEvent:getAuthor() end
 ---@nodiscard  
 function ChatSendEvent:getType() end
 
----@return String  
+---@return string  
 ---@nodiscard  
 function ChatSendEvent:getXuid() end
 

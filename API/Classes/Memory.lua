@@ -39,7 +39,7 @@ function Memory.memSet(ptr, val, num) end
 function Memory.copy(dest, src, size) end
 
 ---Returns the base address of the specified module.
----@param moduleName? aString  
+---@param moduleName? string  
 ---@return integer  
 ---@nodiscard  
 function Memory.getBaseAddress(moduleName) end
@@ -112,14 +112,14 @@ function Memory.readVec3(address) end
 ---Reads a null-terminated string from memory.  
 ---@param address integer  
 ---@param maxLength? integer  
----@return String  
+---@return string  
 ---@nodiscard  
 function Memory.readString(address, maxLength) end
 
 ---Tries to safely read a string from memory, returning nil if invalid.  
 ---@param address integer  
 ---@param maxLength? integer  
----@return String?  
+---@return string?  
 ---@nodiscard  
 function Memory.tryReadString(address, maxLength) end
 
@@ -177,7 +177,7 @@ function Memory.writeVec3(address, value) end
 
 ---Writes a string to memory.  
 ---@param address integer  
----@param value aString  
+---@param value string  
 function Memory.writeString(address, value) end
 
 ---Writes multiple bytes from an array to memory.  
@@ -187,7 +187,7 @@ function Memory.writeBytes(address, bytes) end
 
 ---Reads a Lua table from memory according to a format.  
 ---@param address integer  
----@param format aString e.g., "iif" means int, int, float  
+---@param format string e.g., "iif" means int, int, float  
 ---@return table  
 ---@nodiscard  
 function Memory.readTable(address, format) end
@@ -195,7 +195,7 @@ function Memory.readTable(address, format) end
 ---Writes a Lua table to memory according to a format.  
 ---@param address integer  
 ---@param tbl table  
----@param format aString  
+---@param format string  
 function Memory.writeTable(address, tbl, format) end
 
 ---Performs a RIP-relative address calculation.  
@@ -205,8 +205,8 @@ function Memory.writeTable(address, tbl, format) end
 function Memory.rip(address) end
 
 ---Scans for a byte pattern in a module's memory.  
----@param pattern aString  
----@param moduleName? aString  
+---@param pattern string  
+---@param moduleName? string  
 ---@return integer  
 ---@nodiscard  
 function Memory.scan(pattern, moduleName) end

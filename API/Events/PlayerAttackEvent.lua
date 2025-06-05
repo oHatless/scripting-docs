@@ -4,7 +4,7 @@
 local PlayerAttackEvent = {}
 
 ---Gets the player you attacked.  
----@return Actor?  
+---@return LocalActor?  
 ---@nodiscard  
 function PlayerAttackEvent:getTarget() end
 

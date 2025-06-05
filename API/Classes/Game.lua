@@ -34,7 +34,7 @@ function game.isInWorld() end
 function game.getDimension() end
 
 ---Returns the name of the screen you are in.  
----@return String  
+---@return string  
 ---@nodiscard  
 function game.getScreenName() end
 
@@ -53,7 +53,7 @@ function game.setCursorPos(pos) end
 function game.setCursorPos(x, y) end
 
 ---Plays a Minecraft sound.  
----@param name aString  
+---@param name string  
 ---@param volume number?  
 ---@param pitch number?
 function game.playSound(name, volume, pitch) end
@@ -65,24 +65,24 @@ function game.takeScreenshot() end
 function game.copyScreenshot() end
 
 ---Disconnects you from the game/server.  
----@param reason aString?  
+---@param reason string?  
 function game.disconnect(reason) end
 
 ---Returns the clipboard content.  
----@return String?  
+---@return string?  
 ---@nodiscard  
 function game.getClipboard() end
 
 ---Sets the clipboard content.  
----@param content aString  
+---@param content string  
 function game.setClipboard(content) end
 
 ---Returns Minecrafts version as a String.  
----@return String  
+---@return string  
 ---@nodiscard  
 function game.getVersion() end
 
 ---Returns Minecrafts version as a String but formatted nicely (how it looks in the main menu).  
----@return String  
+---@return string  
 ---@nodiscard  
 function game.getFormattedVersion() end

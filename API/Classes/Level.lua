@@ -8,6 +8,6 @@ local Level = {}
 function Level:setTime(time) end
 
 ---Returns the level's unique ID.  
----@return String  
+---@return string  
 ---@nodiscard  
 function Level:getId() end
