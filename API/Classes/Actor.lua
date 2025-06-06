@@ -15,12 +15,12 @@ function Actor.getActors() end
 function Actor.forEach(callback) end
 
 ---Returns the actor's position.  
----@return vec3?  
+---@return Vec3?  
 ---@nodiscard  
 function LocalActor:getPosition() end
 
 ---Returns the actor's rotation.  
----@return vec2?  
+---@return Vec2?  
 ---@nodiscard  
 function LocalActor:getRotation() end
 

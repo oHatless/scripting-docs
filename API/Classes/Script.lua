@@ -1,20 +1,34 @@
 ---@meta
 
----@class script
-script = {}
+---@class Script
+Script = {}
 
 ---Runs the callback repeatedly in a shared script thread until unloaded.  
 ---@param callback function  
 ---@param delay? number # The delay in milliseconds, default is 10
-function script.loop(callback, delay) end
+function Script.loop(callback, delay) end
 
 ---Yields the execution of the current coroutine.  
 ---You can yield in any Nuvola function/callback.  
 ---@param ms number  
-function script.yield(ms) end
+function Script.yield(ms) end
 
----Queues a request to reload all scripts.  
-function script.reloadAll() end
+function Script.getName() end
 
----Queues a request to reload the script that called this function.  
-function script.reload() end
+function Script.getDescription() end
+
+function Script.getAuthor() end
+
+function Script.getMainClass() end
+
+function Script.getType() end
+
+function Script.getVersion() end
+
+function Script.getCategory() end
+
+function Script.getHold() end
+
+function Script.getBind() end
+
+function Script.getUsage() end

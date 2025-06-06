@@ -1,119 +1,119 @@
 ---@meta
 
----@class vec1
+---@class Vec1
 ---@field x number
-vec1 = {}
+Vec1 = {}
 
 ---Creates a new vec1 object.  
 ---@param x? number  
----@return vec1  
-function vec1.new(x) end
+---@return Vec1  
+function Vec1.new(x) end
 
 ---Returns the length (magnitude) of the vector.  
----@param v vec1  
+---@param v Vec1  
 ---@return number  
-function vec1.length(v) end
+function Vec1.length(v) end
 
 ---Returns a normalized version of the vector.  
----@param v vec1  
----@return vec1  
-function vec1.normalize(v) end
+---@param v Vec1  
+---@return Vec1  
+function Vec1.normalize(v) end
 
 ---Returns the dot product of two vectors.  
----@param a vec1  
----@param b vec1  
+---@param a Vec1  
+---@param b Vec1  
 ---@return number  
-function vec1.dot(a, b) end
+function Vec1.dot(a, b) end
 
----@class vec2
+---@class Vec2
 ---@field x number
 ---@field y number
-vec2 = {}
+Vec2 = {}
 
 ---Creates a new vec2 object.  
 ---@param x? number  
 ---@param y? number  
----@return vec2  
-function vec2.new(x, y) end
+---@return Vec2  
+function Vec2.new(x, y) end
 
 ---Returns the length (magnitude) of the vector.  
----@param v vec2  
+---@param v Vec2  
 ---@return number  
-function vec2.length(v) end
+function Vec2.length(v) end
 
 ---Returns a normalized version of the vector.  
----@param v vec2  
----@return vec2  
-function vec2.normalize(v) end
+---@param v Vec2  
+---@return Vec2  
+function Vec2.normalize(v) end
 
 ---Returns the dot product of two vectors.  
----@param a vec2  
----@param b vec2  
+---@param a Vec2  
+---@param b Vec2  
 ---@return number  
-function vec2.dot(a, b) end
+function Vec2.dot(a, b) end
 
----@class vec3
+---@class Vec3
 ---@field x number
 ---@field y number
 ---@field z number
-vec3 = {}
+Vec3 = {}
 
 ---Creates a new vec3 object.  
 ---@param x? number  
 ---@param y? number  
 ---@param z? number  
----@return vec3  
-function vec3.new(x, y, z) end
+---@return Vec3  
+function Vec3.new(x, y, z) end
 
 ---Returns the length (magnitude) of the vector.  
----@param v vec3  
+---@param v Vec3  
 ---@return number  
-function vec3.length(v) end
+function Vec3.length(v) end
 
 ---Returns a normalized version of the vector.  
----@param v vec3  
----@return vec3  
-function vec3.normalize(v) end
+---@param v Vec3  
+---@return Vec3  
+function Vec3.normalize(v) end
 
 ---Returns the dot product of two vectors.  
----@param a vec3  
----@param b vec3  
+---@param a Vec3  
+---@param b Vec3  
 ---@return number  
-function vec3.dot(a, b) end
+function Vec3.dot(a, b) end
 
 ---Returns the cross product of two vectors.  
----@param a vec3  
----@param b vec3  
----@return vec3  
-function vec3.cross(a, b) end
+---@param a Vec3  
+---@param b Vec3  
+---@return Vec3  
+function Vec3.cross(a, b) end
 
----@class vec4
+---@class Vec4
 ---@field x number
 ---@field y number
 ---@field z number
 ---@field w number
-vec4 = {}
+Vec4 = {}
 
 ---Creates a new vec4 object.  
 ---@param x? number  
 ---@param y? number  
 ---@param z? number  
 ---@param w? number  
----@return vec4  
-function vec4.new(x, y, z, w) end
+---@return Vec4  
+function Vec4.new(x, y, z, w) end
 
 ---Returns the length (magnitude) of the vector.  
----@param v vec4  
+---@param v Vec4  
 ---@return number  
-function vec4.length(v) end
+function Vec4.length(v) end
 
 ---Returns a normalized version of the vector.  
----@param v vec4  
----@return vec4  
-function vec4.normalize(v) end
+---@param v Vec4  
+---@return Vec4  
+function Vec4.normalize(v) end
 
 ---Returns the dot product of two vectors.  
----@param a vec4  
----@param b vec4  
+---@param a Vec4  
+---@param b Vec4  
 ---@return number  
-function vec4.dot(a, b) end
+function Vec4.dot(a, b) end

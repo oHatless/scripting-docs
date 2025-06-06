@@ -3,19 +3,24 @@
 ---@class RenderPassEvent
 local RenderPassEvent = {}
 
----@enum RenderPassID
-RenderPassID = {
-    SCENE_EFFECT = 0,
-    SCENE_OVERLAY = 1,
-    HUD = 2,
-    PRESENT = 3
+---@enum PassID
+PassID = {
+    PreSync = 0,
+    SceneEffect = 1,
+    SceneOverlay = 2,
+    HUD = 3,
+    Present = 4
 }
 
----@return RenderPassID  
+---@return PassID  
 ---@nodiscard  
-function RenderPassEvent:getPassID() end
+function RenderPassEvent:getPass() end
 
----@param id RenderPassID  
+---@param id PassID  
 ---@return boolean  
 ---@nodiscard  
-function RenderPassEvent:isPassID(id) end
+function RenderPassEvent:isPass(id) end
+
+---@nodiscard  
+---@return Renderer  
+function RenderPassEvent:getRenderer() end

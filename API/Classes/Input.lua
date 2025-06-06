@@ -31,12 +31,12 @@ function Input.isKeyUp(key) end
 function Input.isMousePressed(button) end
 
 ---Returns the mouse position on the screen.  
----@return vec2  
+---@return Vec2  
 ---@nodiscard  
 function Input.getMousePosition() end
 
 ---Returns the mouse delta since the last frame.  
----@return vec2  
+---@return Vec2  
 ---@nodiscard  
 function Input.getMouseDelta() end
 

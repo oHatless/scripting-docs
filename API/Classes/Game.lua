@@ -39,12 +39,12 @@ function game.getDimension() end
 function game.getScreenName() end
 
 ---Returns your cursor position.  
----@return vec2  
+---@return Vec2  
 ---@nodiscard  
 function game.getCursorPos() end
 
 ---Sets your cursor position.  
----@param pos vec2
+---@param pos Vec2
 function game.setCursorPos(pos) end
 
 ---Sets your cursor position.  

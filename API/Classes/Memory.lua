@@ -105,7 +105,7 @@ function Memory.readFloat(address) end
 
 ---Reads a vec3 (three floats) from memory.  
 ---@param address integer  
----@return vec3  
+---@return Vec3  
 ---@nodiscard  
 function Memory.readVec3(address) end
 
@@ -172,7 +172,7 @@ function Memory.writeFloat(address, value) end
 
 ---Writes a vec3 (three floats) to memory.  
 ---@param address integer  
----@param value vec3  
+---@param value Vec3  
 function Memory.writeVec3(address, value) end
 
 ---Writes a string to memory.  

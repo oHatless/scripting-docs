@@ -5,11 +5,11 @@ local MouseInputEvent = {}
 
 ---@enum MouseButton
 MouseButton = {
-	None = 0,
-	Left = 1,
-	Right = 2,
-	Middle = 3,
-	Scroll = 4
+    None = 0,
+    Left = 1,
+    Right = 2,
+    Middle = 3,
+    Scroll = 4
 }
 
 ---Returns the button that was pressed.  
@@ -32,12 +32,12 @@ function MouseInputEvent:isPressed() end
 function MouseInputEvent:isReleased() end
 
 ---Returns the current position of the mouse.  
----@return vec2  
+---@return Vec2  
 ---@nodiscard  
 function MouseInputEvent:getPos() end
 
 ---Returns the delta movement since the last frame.  
----@return vec2  
+---@return Vec2  
 ---@nodiscard  
 function MouseInputEvent:getDeltaPos() end
 

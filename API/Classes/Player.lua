@@ -4,17 +4,17 @@
 Player = {}
 
 ---Returns the player's position in floating point coordinates.  
----@return vec3?  
+---@return Vec3?  
 ---@nodiscard  
 function Player.getPosition() end
 
 ---Returns the player's position in integer coordinates.  
----@return vec3?  
+---@return Vec3?  
 ---@nodiscard  
 function Player.getPositionI() end
 
 ---Returns the player's head rotation.  
----@return vec2?  
+---@return Vec2?  
 ---@nodiscard  
 function Player.getRotation() end
 
@@ -55,7 +55,7 @@ function Player.getSaturation() end
 function Player.setPosition(x, y, z) end
 
 ---Sets the player's position.  
----@param pos vec3  
+---@param pos Vec3  
 function Player.setPosition(pos) end
 
 ---Sets the player's head rotation.  
@@ -64,7 +64,7 @@ function Player.setPosition(pos) end
 function Player.setRotation(x, y) end
 
 ---Sets the player's head rotation.  
----@param rot vec2  
+---@param rot Vec2  
 function Player.setRotation(rot) end
 
 ---Returns whether the player is on the ground.  
@@ -133,7 +133,7 @@ function Player.isFacingBlock() end
 function Player.getGameMode() end
 
 ---Returns the velocity of the player in floating point coordinates.  
----@return vec3?  
+---@return Vec3?  
 ---@nodiscard  
 function Player.getVelocity() end
 
