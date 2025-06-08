@@ -3,246 +3,188 @@
 ---@class Fs
 Fs = {}
 
----@class Path
-local Path = {}
+---@class LocalFs
+local LocalFs = {}
 
----@alias PathAlias string|Path
+---@enum CopyOptions
+CopyOptions = {
+    SkipExisting = 1,
+    OverwriteExisting = 2,
+    UpdateExisting = 3,
+    Recursive = 4,
+    CopySymlinks = 5,
+    SkipSymlinks = 6,
+    DirectoriesOnly = 7,
+    CreateSymlinks = 8,
+    CreateHardLinks = 9
+}
 
----Creates a new Path object.  
----@param initialPath string  
----@return Path  
+---Creates a new LocalFs object.  
+---@param path string  
+---@return LocalFs  
 ---@nodiscard  
-function Fs.path(initialPath) end
+function Fs.new(path) end
 
 ---Returns whether a path exists.  
----@param path PathAlias  
+---@param path string  
 ---@return boolean  
 ---@nodiscard  
 function Fs.exists(path) end
 
----Returns whether a path is a file.  
----@param path PathAlias  
----@return boolean  
----@nodiscard  
-function Fs.isFile(path) end
-
 ---Returns whether a path is a directory.  
----@param path PathAlias  
+---@param path string  
 ---@return boolean  
 ---@nodiscard  
 function Fs.isDirectory(path) end
 
----Returns the size of a file (in bytes).  
----@param path PathAlias  
----@return integer  
+---Returns whether a path is a file.  
+---@param path string  
+---@return boolean  
 ---@nodiscard  
-function Fs.fileSize(path) end
-
----Returns the last write time of a file (as a timestamp in seconds).  
----@param path PathAlias  
----@return number  
----@nodiscard  
-function Fs.lastWriteTime(path) end
-
----Returns the filename.  
----@param path PathAlias  
----@return string  
----@nodiscard  
-function Fs.filename(path) end
-
----Returns the file stem.  
----@param path PathAlias  
----@return string  
----@nodiscard  
-function Fs.stem(path) end
-
----Returns the file extension.  
----@param path PathAlias  
----@return string  
----@nodiscard  
-function Fs.extension(path) end
-
----Returns the parent path (directory).  
----@param path PathAlias  
----@return string  
----@nodiscard  
-function Fs.parentPath(path) end
-
----Returns the absolute path.  
----@param path PathAlias  
----@return string  
----@nodiscard  
-function Fs.absolute(path) end
-
----Returns the canonical path  
----@param path PathAlias  
----@return string  
----@nodiscard  
-function Fs.canonical(path) end
+function Fs.isFile(path) end
 
 ---Creates a directory.  
----@param path PathAlias  
+---@param path string  
 ---@return boolean  
 function Fs.createDirectory(path) end
 
 ---Creates directories recursively.  
----@param path PathAlias  
+---@param path string  
 ---@return boolean  
 function Fs.createDirectories(path) end
 
 ---Removes a file or empty directory.  
----@param path PathAlias  
+---@param path string  
 ---@return boolean  
 function Fs.remove(path) end
 
 ---Recursively removes a directory and its contents.  
----@param path PathAlias  
+---@param path string  
 ---@return boolean  
 function Fs.removeAll(path) end
 
----Renames or moves a file or directory.  
----@param oldPath PathAlias  
----@param newPath PathAlias  
-function Fs.rename(oldPath, newPath) end
-
----Copies a file or directory.  
----@param fromPath PathAlias  
----@param toPath PathAlias  
----@param overwrite? boolean  
-function Fs.copy(fromPath, toPath, overwrite) end
-
----Returns a list of filenames inside a directory.  
----@param path PathAlias  
----@return string[]  
----@nodiscard  
-function Fs.list(path) end
-
----Reads the entire contents of a file as a string.  
----@param path PathAlias  
----@return string?  
----@nodiscard  
-function Fs.readFile(path) end
-
----Writes a string to a file (overwrites if exists).  
----@param path PathAlias  
----@param content string  
----@return boolean  
-function Fs.writeFile(path, content) end
-
----Appends a string to a file.  
----@param path PathAlias  
----@param content string  
----@return boolean  
-function Fs.appendFile(path, content) end
-
----Checks if a path has a specific extension (case-insensitive).  
----@param path PathAlias  
----@param ext string  
----@return boolean  
----@nodiscard  
-function Fs.hasExtension(path, ext) end
-
----Returns true if a directory contains a specific file or subdirectory.  
----@param dir PathAlias  
----@param name string  
----@return boolean  
----@nodiscard  
-function Fs.contains(dir, name) end
-
----Returns true if a file is readable.  
----@param path PathAlias  
----@return boolean  
----@nodiscard  
-function Fs.isReadable(path) end
-
----Returns true if a file is writable.  
----@param path PathAlias  
----@return boolean  
----@nodiscard  
-function Fs.isWritable(path) end
-
----Safely joins two path parts into a single path.  
----@param a PathAlias  
----@param b PathAlias  
----@return string  
----@nodiscard  
-function Fs.join(a, b) end
-
----Splits a full path into directory and filename parts.  
----@param path PathAlias  
----@return string dir, string file  
----@nodiscard  
-function Fs.split(path) end
-
----Opens a folder in File Explorer.  
----@param folder PathAlias  
-function Fs.showFolder(folder) end
-
 ---Returns the local state directory.  
----@return Path  
+---@return LocalFs  
 ---@nodiscard  
 function Fs.getLocalState() end
 
 ---Returns the roaming state directory.  
----@return Path  
+---@return LocalFs  
 ---@nodiscard  
 function Fs.getRoamingState() end
 
 ---Returns the temporary state directory.  
----@return Path  
+---@return LocalFs  
 ---@nodiscard  
 function Fs.getTempState() end
 
 ---Returns the Nuvola directory inside RoamingState.  
----@return Path  
+---@return LocalFs  
 ---@nodiscard  
-function Fs.getNuvolPathAlias() end
+function Fs.getNuvolaPath() end
 
----Joins another part onto the current path.  
----@param other PathAlias|string  
----@return Path  
-function Path:join(other) end
+---Opens a folder in File Explorer.  
+---@param folder string  
+function Fs.openFolder(folder) end
 
----Returns the filename (e.g., "file.txt").  
----@return Path  
-function Path:filename() end
+---Opens a file in its default application.  
+---@param file string  
+function Fs.openFile(file) end
 
----Returns the file stem (e.g., "file" from "file.txt").  
----@return Path  
-function Path:stem() end
+---Reads the contents of a file.  
+---@param file string
+---@return string  
+function Fs.readFile(file) end
 
----Returns the file extension (e.g., ".txt").  
----@return Path  
-function Path:extension() end
+---Appends content to a file.  
+---@param file string
+---@param content string
+function Fs.writeFile(file, content) end
 
----Returns the parent directory path.  
----@return Path  
-function Path:parentPath() end
+---Sets the path for this LocalFs object.  
+---@param path string  
+---@return LocalFs  
+function LocalFs:setPath(path) end
 
----Returns the absolute path.  
----@return Path  
-function Path:absolute() end
-
----Returns the canonical (cleaned) path.  
----@return Path  
-function Path:canonical() end
-
----Converts the Path to a string.  
+---Gets the path of this LocalFs object.  
 ---@return string  
 ---@nodiscard  
-function Path:toString() end
+function LocalFs:getPath() end
+
+---Gets the path of this LocalFs object.  
+---@return string  
+---@nodiscard  
+function LocalFs:toString() end
 
 ---Returns whether this path exists.  
 ---@return boolean  
 ---@nodiscard  
-function Path:exists() end
-
----Returns whether this path is a file.  
----@return boolean  
----@nodiscard  
-function Path:isFile() end
+function LocalFs:exists() end
 
 ---Returns whether this path is a directory.  
 ---@return boolean  
 ---@nodiscard  
-function Path:isDirectory() end
+function LocalFs:isDirectory() end
+
+---Returns whether this path is a file.  
+---@return boolean  
+---@nodiscard  
+function LocalFs:isFile() end
+
+---Creates a directory at this path.  
+---@return boolean  
+function LocalFs:createDirectory() end
+
+---Creates directories recursively at this path.  
+---@return boolean  
+function LocalFs:createDirectories() end
+
+---Removes a file or empty directory at this path.  
+---@return boolean  
+function LocalFs:remove() end
+
+---Recursively removes a directory and its contents at this path.  
+---@return boolean  
+function LocalFs:removeAll() end
+
+---Returns the file size in bytes.  
+---@return integer?  
+---@nodiscard  
+function LocalFs:fileSize() end
+
+---Copies a file or directory to a destination.  
+---@param to string  
+---@param options? CopyOptions  
+---@return boolean  
+function LocalFs:copy(to, options) end
+
+---Renames or moves the file or directory to a new path.  
+---@param newPath string  
+---@return boolean  
+function LocalFs:rename(newPath) end
+
+---Returns the absolute path.  
+---@return string  
+---@nodiscard  
+function LocalFs:absolute() end
+
+---Returns the canonical (cleaned) path.  
+---@return string?  
+---@nodiscard  
+function LocalFs:canonical() end
+
+---Combines this path with another path part.  
+---@param path string  
+---@return LocalFs  
+---@nodiscard  
+function LocalFs:combine(path) end
+
+---Lists all entries in the directory.  
+---@return table  
+---@nodiscard  
+function LocalFs:listDirectory() end
+
+---Recursively lists all entries in the directory.  
+---@return table  
+---@nodiscard  
+function LocalFs:listDirectoryRecursive() end

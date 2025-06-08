@@ -3,12 +3,12 @@
 ---@class KeyPressEvent
 local KeyPressEvent = {}
 
----Returns the key code (e.g, 65 for "a").  
+---Returns the key code (e.g, 65 for "A").  
 ---@return integer  
 ---@nodiscard  
 function KeyPressEvent:getKeyCode() end
 
----Returns the lowercase key name (e.g, "a").  
+---Returns the lowercase key name (e.g, "A").  
 ---@return string  
 ---@nodiscard  
 function KeyPressEvent:getKeyName() end

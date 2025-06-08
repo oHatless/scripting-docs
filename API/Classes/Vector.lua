@@ -5,7 +5,7 @@
 Vec1 = {}
 
 ---Creates a new vec1 object.  
----@param x? number  
+---@param x number  
 ---@return Vec1  
 function Vec1.new(x) end
 
@@ -31,8 +31,8 @@ function Vec1.dot(a, b) end
 Vec2 = {}
 
 ---Creates a new vec2 object.  
----@param x? number  
----@param y? number  
+---@param x number  
+---@param y number  
 ---@return Vec2  
 function Vec2.new(x, y) end
 
@@ -59,9 +59,9 @@ function Vec2.dot(a, b) end
 Vec3 = {}
 
 ---Creates a new vec3 object.  
----@param x? number  
----@param y? number  
----@param z? number  
+---@param x number  
+---@param y number  
+---@param z number  
 ---@return Vec3  
 function Vec3.new(x, y, z) end
 
@@ -95,10 +95,10 @@ function Vec3.cross(a, b) end
 Vec4 = {}
 
 ---Creates a new vec4 object.  
----@param x? number  
----@param y? number  
----@param z? number  
----@param w? number  
+---@param x number  
+---@param y number  
+---@param z number  
+---@param w number  
 ---@return Vec4  
 function Vec4.new(x, y, z, w) end
 

@@ -27,8 +27,7 @@ RoundingFlag = {
     Left = 5,
     Right = 6,
     Top = 7,
-    Bottom = 8,
-    None = 9
+    Bottom = 8
 }
 
 ---@enum Font
@@ -59,10 +58,20 @@ function Renderer:getFrameCount() end
 ---@return number  
 function Renderer:getFrameDelta() end
 
----Gets the total number of frames in one second.  
+---Gets FPS based on frame delta time.  
+---@nodiscard  
+---@return number  
+function Renderer:getRawFPS() end
+
+---Gets FPS averaged over one second, rounded up.  
 ---@nodiscard  
 ---@return integer  
 function Renderer:getFPS() end
+
+---Gets the position of your mouse cursor.  
+---@nodiscard  
+---@return Vec2  
+function Renderer:getMousePos() end
 
 ---Sets the font for rendering.  
 ---@param font Font  

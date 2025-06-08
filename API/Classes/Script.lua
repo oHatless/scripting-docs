@@ -8,10 +8,9 @@ Script = {}
 ---@param delay? number # The delay in milliseconds, default is 10
 function Script.loop(callback, delay) end
 
----Yields the execution of the current coroutine.  
----You can yield in any Nuvola function/callback.  
+---Suspends the current thread.  
 ---@param ms number  
-function Script.yield(ms) end
+function Script.sleep(ms) end
 
 function Script.getName() end
 

@@ -53,11 +53,11 @@ function Curl:clearHeaders() end
 ---@return Curl  
 function Curl:setopt(option, value) end
 
----Perform the curl request asynchronously.  
+---Perform the curl request synchronously.  
 function Curl:perform() end
 
----Perform the curl request synchronously.  
-function Curl:performSync() end
+---Perform the curl request asynchronously.  
+function Curl:performAsync() end
 
 ---Abort the current perform operation if running.  
 function Curl:abort() end
