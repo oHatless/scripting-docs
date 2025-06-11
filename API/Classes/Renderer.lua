@@ -94,6 +94,12 @@ function Renderer:startScissor(v1, v2) end
 ---Ends the clipping mask.  
 function Renderer:stopScissor() end
 
+---Calculates the text size.  
+---@param text string  
+---@param size? number  
+---@return Vec2  
+function Renderer:getTextSize(text, size) end
+
 ---Draws text.  
 ---@param pos Vec2  
 ---@param text string  
@@ -103,6 +109,14 @@ function Renderer:stopScissor() end
 ---@param alignX? AlignmentX  
 ---@param alignY? AlignmentY  
 function Renderer:drawText(pos, text, color, fontSize, size, alignX, alignY) end
+
+---Draws text centered.  
+---@param pos Vec2  
+---@param text string  
+---@param color? Vec4  
+---@param fontSize? number  
+---@param size? Vec2  
+function Renderer:drawTextCentered(pos, text, color, fontSize, size) end
 
 ---Draws a line.  
 ---@param start Vec2  
